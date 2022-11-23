@@ -58,6 +58,13 @@ namespace Exe3_A
                 Console.Write(LAST.rollnumber +""+LAST.name + "\n");
             }
         }
+        public void firstnode()
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is Empty");
+            else
+                Console.WriteLine("\nThe first record in the list is : \n\n" + LAST.next.rollnumber + "" + LAST.next.name);
+        }
     }
 
     internal class Program
