@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace Exe3_A
 {
+    class node
+    {
+        public int rollnumber;
+        public string name;
+        public node next;
+    }
+
     internal class Program
     {
         static void Main(string[] args)
