@@ -34,7 +34,47 @@ namespace Exe3_A
             else
                 return (false);/*returns false if the node is not found*/
         }
-       
+        public void insertnode()/*add insert node for adding new data*/
+        {
+            int number;
+            string nama;
+            Console.WriteLine("\nEnter the roll number of student :");
+            number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nEnter the name of student");
+            nama = Console.ReadLine();
+            node newnode = new node();
+            newnode.name = nama;
+            newnode.rollnumber = number;
+
+            if (LAST == null || number <= LAST.rollnumber)
+            {
+                if ((LAST != null) && (number == LAST.rollnumber))
+                {
+                    Console.WriteLine("");
+                    return;
+                }
+                newnode.next = LAST;
+                LAST = newnode;
+                return;
+            }
+            node previous, current;
+            previous = LAST.next;
+            current = LAST.next;
+
+            while((current != null)&& (number >= current.rollnumber))
+            {
+                if(number == current.rollnumber)
+                {
+                    Console.WriteLine();
+                    return;
+                }
+                previous.next = current;
+                previous.next = newnode;
+            }
+            newnode.next = LAST.next;
+            LAST.next = newnode;
+
+        }
         public bool listEmpty()
         {
             if (LAST == null)
