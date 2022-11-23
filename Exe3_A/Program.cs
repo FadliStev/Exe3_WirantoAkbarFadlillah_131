@@ -75,6 +75,45 @@ namespace Exe3_A
             LAST.next = newnode;
 
         }
+        public bool deletenode(int rollNo)/*method for delete data that has inserted*/
+        {
+            node previous, current;
+            previous = current = null;
+            if (Search(rollNo, ref previous, ref current) == false)
+            {
+                current = LAST.next;
+                LAST.next = current.next;
+                return true;
+            } 
+            if(rollNo == LAST.rollnumber)
+            {
+                current = LAST;
+                previous = current.next;
+                return true;
+            }
+            if(rollNo == LAST.rollnumber)
+            {
+                current = LAST;
+                previous = current.next;
+                while(previous.next != LAST)
+                    previous =previous.next;
+                previous.next = LAST.next;
+                LAST = previous;    
+                return true;
+            }
+            if(rollNo <= LAST.rollnumber)
+            {
+                current = LAST.next;
+                previous = LAST.next;
+                while(rollNo > current.rollnumber || previous == LAST)
+                {
+                    previous = current;
+                    current = current.next;
+                }
+                previous.next = current.next;
+            }
+            return true;
+        }
         public bool listEmpty()
         {
             if (LAST == null)
