@@ -41,6 +41,23 @@ namespace Exe3_A
             else
                 return false;
         }
+        public void tarverse()/*Traverses all the nodes of the lsit*/
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is Empty");
+            else
+            {
+                Console.WriteLine("\nRecords in the list are : \n");
+                node currentnode;
+                currentnode = LAST.next;  
+                while (currentnode != LAST)
+                {
+                    Console.Write(currentnode.rollnumber + " " + currentnode.name + "\n");
+                    currentnode = currentnode.next;
+                }
+                Console.Write(LAST.rollnumber +""+LAST.name + "\n");
+            }
+        }
     }
 
     internal class Program
