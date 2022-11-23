@@ -34,6 +34,7 @@ namespace Exe3_A
             else
                 return (false);/*returns false if the node is not found*/
         }
+       
         public bool listEmpty()
         {
             if (LAST == null)
@@ -65,12 +66,19 @@ namespace Exe3_A
             else
                 Console.WriteLine("\nThe first record in the list is : \n\n" + LAST.next.rollnumber + "" + LAST.next.name);
         }
-    }
 
-    internal class Program
-    {
         static void Main(string[] args)
         {
+            Circularlist obj = new Circularlist();
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("\nMenu");
+                }
+            }
         }
     }
+
+   
 }
